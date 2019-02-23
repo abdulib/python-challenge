@@ -18,8 +18,8 @@ budget_data = budget_data_with_header[1:]
 header = 'Financial Analysis'
 print(header)
 
-demacation = '----------------------------------'
-print(demacation)
+demarcation = '----------------------------------'
+print(demarcation)
 
 #print data to verify code is working correctly
 #print(budget_data[0:5])
@@ -34,12 +34,16 @@ print(months)
 #Initialize a variable named for the total with a value of zero outside the loop
 net_total_amount = 0
 
+
 #loop(iterate) through all the rows in the list of list  budget dataset. 
 # Extract the amount from the dataset and store it in net_total_amount variable
 #the amount is the last(second element of each row
 #Add the value stored in row to the current value of the net_total_amount after converting it into an interger
 for row in budget_data:
     net_total_amount = net_total_amount + int(row[-1])
+   
+
+
 
 #create variable for the toatal and concantenate to string 
 # while simultenously converting the net_total_amount to a string
@@ -50,5 +54,19 @@ print(total)
 
 
 #The average of the changes in "Profit/Losses" over the entire period
+
+profit_and_loss_list = []
+
+for row in budget_data:
+     profit_and_loss_list.append(int(row[-1]))
+     profit_and_loss_list
+
+
+print(profit_and_loss_list[:3])
+
+profit_or_loss_change = []
+
+
+
 #The greatest increase in profits (date and amount) over the entire period
 #The greatest decrease in losses (date and amount) over the entire period
