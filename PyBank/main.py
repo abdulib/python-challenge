@@ -30,10 +30,8 @@ months = 'Total Months: ' + str(total_number_of_months)
 print(months)
 
 #The net total amount of "Profit/Losses" over the entire period
-
 #Initialize a variable named for the total with a value of zero outside the loop
 net_total_amount = 0
-
 
 #loop(iterate) through all the rows in the list of list  budget dataset. 
 # Extract the amount from the dataset and store it in net_total_amount variable
@@ -43,30 +41,39 @@ for row in budget_data:
     net_total_amount = net_total_amount + int(row[-1])
    
 
-
-
 #create variable for the toatal and concantenate to string 
 # while simultenously converting the net_total_amount to a string
 #print the total
 total = 'Total: $' + str(net_total_amount)
 print(total)
 
-
-
 #The average of the changes in "Profit/Losses" over the entire period
-
 profit_and_loss_list = []
 
 for row in budget_data:
      profit_and_loss_list.append(int(row[-1]))
      profit_and_loss_list
 
-
-print(profit_and_loss_list[:3])
+#print(profit_and_loss_list[:3])
 
 profit_or_loss_change = []
+for index in range(len(profit_and_loss_list)):
+    if index == 0:
+        pass
+    else:
+        profit_or_loss_change.append(profit_and_loss_list[index] - profit_and_loss_list[index - 1])
 
+change_sum = sum(profit_or_loss_change)
+change_len = len(profit_or_loss_change)
 
+average_change = round(change_sum / change_len, 2)
+
+print('Average Change: $' + str(average_change))
 
 #The greatest increase in profits (date and amount) over the entire period
+greatest_increase = max(profit_or_loss_change)
+print(greatest_increase)
+
 #The greatest decrease in losses (date and amount) over the entire period
+greatest_decrease = min(profit_or_loss_change)
+print(greatest_decrease)
