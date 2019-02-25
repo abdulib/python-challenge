@@ -21,3 +21,52 @@ print(election_data[:5])
 
 #print headings and line
 print('Election Results')
+
+demarcation = '------------------------------'
+print(demarcation)
+
+#loop through data to sum election votes
+total_votes = 0
+
+for vote in election_data:
+    voter = vote[1]
+    
+    total_votes += 1
+    
+
+print('Total Votes: ' + str(total_votes))
+
+print(demarcation)
+
+candidates = {}
+
+for vote in election_data:
+    candidate = vote[2]
+    if candidate in candidates:
+        candidates[candidate] += 1
+    else:
+        candidates[candidate] = 1
+
+#print(candidates)
+
+khan_percent = candidates['Khan'] / total_votes * 100
+
+correy_percent = candidates['Correy'] / total_votes * 100
+
+li_percent = candidates['Li'] / total_votes * 100
+
+otooley_percent = candidates["O'Tooley"] / total_votes * 100
+
+
+
+print('Khan: ' + '%.3f' % khan_percent + '%' + ' (' + str(candidates['Khan']) + ')')
+print('Correy: ' + '%.3f' % correy_percent + '%'+ ' (' + str(candidates['Correy']) + ')') 
+print('Li: ' + '%.3f' % li_percent + '%'+ ' (' + str(candidates['Li']) + ')')
+print("O'Tooley: " + '%.3f' % otooley_percent + '%'+ ' (' + str(candidates["O'Tooley"]) + ')')
+
+
+print(demarcation)
+
+print('Winner: ' + 'Khan')
+
+print(demarcation)
