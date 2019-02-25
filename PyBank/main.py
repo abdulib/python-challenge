@@ -15,8 +15,8 @@ budget_data_with_header = list(read_file)
 budget_data = budget_data_with_header[1:]
 
 #print head and demacation
-header = 'Financial Analysis'
-print(header)
+heading = 'Financial Analysis'
+print(heading)
 
 demarcation = '----------------------------------'
 print(demarcation)
@@ -73,6 +73,7 @@ print('Average Change: $' + str(average_change))
 #The greatest increase in profits (date and amount) over the entire period
 greatest_increase = max(profit_or_loss_change)
 print(greatest_increase)
+
 
 #The greatest decrease in losses (date and amount) over the entire period
 greatest_decrease = min(profit_or_loss_change)
