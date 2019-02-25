@@ -17,7 +17,7 @@
 
 ## PyPoll
 - Helping a small, rural town modernize its vote-counting process.
-- poll data called [Election Data](https://rice.bootcampcontent.com/Rice-Coding-Bootcamp/RICEHOU201902DATA2/raw/master/hw/03-Python/Instructions/PyPoll/Resources/election_data.csv)
+- Using poll data called [Election Data](https://rice.bootcampcontent.com/Rice-Coding-Bootcamp/RICEHOU201902DATA2/raw/master/hw/03-Python/Instructions/PyPoll/Resources/election_data.csv)
 
 
 **The task is to create a Python script that analyzes the votes and calculates each of the following:**
