@@ -14,12 +14,7 @@ budget_data_with_header = list(read_file)
 #exclude the header row of the dataset fromour list of list to enable us do the analysis
 budget_data = budget_data_with_header[1:]
 
-#print head and demacation
-heading = 'Financial Analysis'
-print(heading)
 
-demarcation = '----------------------------------'
-print(demarcation)
 
 #print data to verify code is working correctly
 #print(budget_data[0:5])
@@ -27,11 +22,11 @@ print(demarcation)
 #The total number of months included in the dataset
 total_number_of_months = len(budget_data)
 months = 'Total Months: ' + str(total_number_of_months)
-print(months)
 
 #The net total amount of "Profit/Losses" over the entire period
 #Initialize a variable named for the total with a value of zero outside the loop
 net_total_amount = 0
+date_list = []
 
 #loop(iterate) through all the rows in the list of list  budget dataset. 
 # Extract the amount from the dataset and store it in net_total_amount variable
@@ -39,13 +34,14 @@ net_total_amount = 0
 #Add the value stored in row to the current value of the net_total_amount after converting it into an interger
 for row in budget_data:
     net_total_amount = net_total_amount + int(row[-1])
-   
+    date_list.append(row[0])
+
+#print(date_list[:5])
 
 #create variable for the toatal and concantenate to string 
 # while simultenously converting the net_total_amount to a string
 #print the total
 total = 'Total: $' + str(net_total_amount)
-print(total)
 
 #The average of the changes in "Profit/Losses" over the entire period
 profit_and_loss_list = []
@@ -68,13 +64,42 @@ change_len = len(profit_or_loss_change)
 
 average_change = round(change_sum / change_len, 2)
 
-print('Average Change: $' + str(average_change))
 
 #The greatest increase in profits (date and amount) over the entire period
 greatest_increase = max(profit_or_loss_change)
-print(greatest_increase)
+max_change_date_index = profit_or_loss_change.index(greatest_increase) + 1
+max_change_date = date_list[max_change_date_index]
 
 
 #The greatest decrease in losses (date and amount) over the entire period
 greatest_decrease = min(profit_or_loss_change)
-print(greatest_decrease)
+min_change_date_index = profit_or_loss_change.index(greatest_decrease) + 1
+min_change_date = date_list[min_change_date_index]
+
+
+#print statements
+print('Financial Analysis')
+print('----------------------------------')
+print(months)
+print(total)
+print('Average Change: $' + str(average_change))
+print('Greatest Increase in Profits: ' + max_change_date + ' (' + str(greatest_increase) + ')')
+print('Greatest Decrease in Profits: ' + min_change_date + ' (' + str(greatest_decrease) + ')')
+
+
+with open('/Users/ibrahimabdulrahmon/Documents/GitHub/python-challenge/PyBank/results.txt', "w") as text_file:
+    text_file.write('Financial Analysis')
+    text_file.write('\n')
+    text_file.write('----------------------------------')
+    text_file.write('\n')
+    text_file.write(months)
+    text_file.write('\n')
+    text_file.write(total)
+    text_file.write('\n')
+    text_file.write('Average Change: $' + str(average_change))
+    text_file.write('\n')
+    text_file.write('Greatest Increase in Profits: ' + max_change_date + ' (' + str(greatest_increase) + ')')
+    text_file.write('\n')
+    text_file.write('Greatest Decrease in Profits: ' + min_change_date + ' (' + str(greatest_decrease) + ')')
+    
+    

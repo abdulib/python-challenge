@@ -16,16 +16,6 @@ election_data = list(read_election_data)
 #exclude Header row from our dataset for analysis
 election_data = election_data[1:]
 
-# test print a few row
-#print(election_data[:5])
-
-#print headings and line
-print('Election Results')
-#print('\n')
-demarcation = '------------------------------'
-print(demarcation)
-#print('\n')
-
 #loop through data to sum election votes
 total_votes = 0
 
@@ -34,11 +24,6 @@ for vote in election_data:
     
     total_votes += 1
     
-print('Total Votes: ' + str(total_votes))
-#print('\n')
-print(demarcation)
-#print('\n')
-
 
 candidates = {}
 
@@ -51,7 +36,6 @@ for vote in election_data:
 
 #print(candidates)
 
-
 khan_percent = candidates['Khan'] / total_votes * 100
 
 correy_percent = candidates['Correy'] / total_votes * 100
@@ -61,19 +45,40 @@ li_percent = candidates['Li'] / total_votes * 100
 otooley_percent = candidates["O'Tooley"] / total_votes * 100
 
 
-
+#print results
+print('Election Results')
+print('------------------------------')
+print('Total Votes: ' + str(total_votes))
+print('------------------------------')
 print('Khan: ' + '%.3f' % khan_percent + '%' + ' (' + str(candidates['Khan']) + ')')
-#print('\n')
 print('Correy: ' + '%.3f' % correy_percent + '%'+ ' (' + str(candidates['Correy']) + ')') 
-#print('\n')
 print('Li: ' + '%.3f' % li_percent + '%'+ ' (' + str(candidates['Li']) + ')')
-#print('\n')
 print("O'Tooley: " + '%.3f' % otooley_percent + '%'+ ' (' + str(candidates["O'Tooley"]) + ')')
-#print('\n')
-
-
-print(demarcation)
-#print('\n')
+print('------------------------------')
 print('Winner: ' + 'Khan')
-#print('\n')
-print(demarcation)
+print('------------------------------')
+
+#export results to txt file
+
+with open('/Users/ibrahimabdulrahmon/Documents/GitHub/python-challenge/PyPoll/results.txt', 'w') as text_file:
+    text_file.write('Election Results')
+    text_file.write('\n')
+    text_file.write('------------------------------')
+    text_file.write('\n')
+    text_file.write('Total Votes: ' + str(total_votes))
+    text_file.write('\n')
+    text_file.write('------------------------------')
+    text_file.write('\n')
+    text_file.write('Khan: ' + '%.3f' % khan_percent + '%' + ' (' + str(candidates['Khan']) + ')')
+    text_file.write('\n') 
+    text_file.write('Correy: ' + '%.3f' % correy_percent + '%'+ ' (' + str(candidates['Correy']) + ')') 
+    text_file.write('\n')
+    text_file.write('Li: ' + '%.3f' % li_percent + '%'+ ' (' + str(candidates['Li']) + ')')
+    text_file.write('\n')
+    text_file.write("O'Tooley: " + '%.3f' % otooley_percent + '%'+ ' (' + str(candidates["O'Tooley"]) + ')')
+    text_file.write('\n')
+    text_file.write('------------------------------')
+    text_file.write('\n')
+    text_file.write('Winner: ' + 'Khan')
+    text_file.write('\n')
+    text_file.write('------------------------------')
