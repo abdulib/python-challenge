@@ -35,8 +35,8 @@ date_list = []
 for row in budget_data:
     net_total_amount = net_total_amount + int(row[-1])
     date_list.append(row[0])
-
-#print(date_list[:5])
+    
+print(date_list[:5])
 
 #create variable for the toatal and concantenate to string 
 # while simultenously converting the net_total_amount to a string
