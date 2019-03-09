@@ -2,7 +2,7 @@
 from csv import reader
 
 #open dataset
-opened_election_data = open('/Users/ibrahimabdulrahmon/Documents/GitHub/python-challenge/PyPoll/election_data.csv')
+opened_election_data = open('PyPoll/election_data.csv')
 
 #read election data
 read_election_data = reader(opened_election_data)

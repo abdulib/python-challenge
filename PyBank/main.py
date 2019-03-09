@@ -2,7 +2,7 @@
 from csv import reader
 
 #Open the file using the open() command. Save the output to a variable named opened_file.
-opened_netflix_file = open('/Users/ibrahimabdulrahmon/Documents/GitHub/python-challenge/PyBank/budget_data.csv')
+opened_netflix_file = open('PyBank/budget_data.csv')
 
 #Read in the opened file using the reader() command. Save the output to a variable named read_file.
 read_file = reader(opened_netflix_file)
@@ -36,7 +36,7 @@ for row in budget_data:
     net_total_amount = net_total_amount + int(row[-1])
     date_list.append(row[0])
     
-print(date_list[:5])
+#print(date_list[:5])
 
 #create variable for the toatal and concantenate to string 
 # while simultenously converting the net_total_amount to a string
