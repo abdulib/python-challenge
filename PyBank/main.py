@@ -2,7 +2,7 @@
 from csv import reader
 
 #Open the file using the open() command. Save the output to a variable named opened_file.
-opened_netflix_file = open('PyBank/budget_data.csv')
+opened_netflix_file = open('budget_data.csv')
 
 #Read in the opened file using the reader() command. Save the output to a variable named read_file.
 read_file = reader(opened_netflix_file)
