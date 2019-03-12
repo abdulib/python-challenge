@@ -36,13 +36,14 @@ for vote in election_data:
 
 #print(candidates)
 
-khan_percent = candidates['Khan'] / total_votes * 100
+khan_percent = (float(candidates['Khan']) / total_votes) * 100
 
-correy_percent = candidates['Correy'] / total_votes * 100
+correy_percent = (float(candidates['Correy']) / total_votes) * 100
 
-li_percent = candidates['Li'] / total_votes * 100
+li_percent = (float(candidates['Li']) / total_votes) * 100
 
-otooley_percent = candidates["O'Tooley"] / total_votes * 100
+otooley_percent = (float(candidates["O'Tooley"]) / total_votes) * 100
+
 
 
 #print results
