@@ -87,7 +87,7 @@ print('Greatest Increase in Profits: ' + max_change_date + ' (' + str(greatest_i
 print('Greatest Decrease in Profits: ' + min_change_date + ' (' + str(greatest_decrease) + ')')
 
 
-with open('/Users/ibrahimabdulrahmon/Documents/GitHub/python-challenge/PyBank/results.txt', "w") as text_file:
+with open('results.txt', "w") as text_file:
     text_file.write('Financial Analysis')
     text_file.write('\n')
     text_file.write('----------------------------------')

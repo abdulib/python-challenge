@@ -61,7 +61,7 @@ print('------------------------------')
 
 #export results to txt file
 
-with open('/Users/ibrahimabdulrahmon/Documents/GitHub/python-challenge/PyPoll/results.txt', 'w') as text_file:
+with open('results.txt', 'w') as text_file:
     text_file.write('Election Results')
     text_file.write('\n')
     text_file.write('------------------------------')
